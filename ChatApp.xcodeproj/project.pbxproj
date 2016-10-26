@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED11AEBA1DC081C700D5B675 /* FriendDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = ED11AEB91DC081C700D5B675 /* FriendDetails.m */; };
+		ED51F7601DBF3C84002F8071 /* FriendsList.m in Sources */ = {isa = PBXBuildFile; fileRef = ED51F75F1DBF3C84002F8071 /* FriendsList.m */; };
+		ED51F7631DBF3FCB002F8071 /* LoginClass.m in Sources */ = {isa = PBXBuildFile; fileRef = ED51F7621DBF3FCB002F8071 /* LoginClass.m */; };
 		EDDB8C6B1DBE51BB0061D8FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDB8C6A1DBE51BB0061D8FB /* main.m */; };
 		EDDB8C6E1DBE51BB0061D8FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDB8C6D1DBE51BB0061D8FB /* AppDelegate.m */; };
 		EDDB8C711DBE51BB0061D8FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDB8C701DBE51BB0061D8FB /* ViewController.m */; };
@@ -14,6 +17,7 @@
 		EDDB8C761DBE51BB0061D8FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDDB8C751DBE51BB0061D8FB /* Assets.xcassets */; };
 		EDDB8C791DBE51BB0061D8FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDDB8C771DBE51BB0061D8FB /* LaunchScreen.storyboard */; };
 		EDDB8C841DBE51BB0061D8FB /* ChatAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDB8C831DBE51BB0061D8FB /* ChatAppTests.m */; };
+		EDF81B7D1DBFA908006F0FBD /* FriendsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF81B7C1DBFA908006F0FBD /* FriendsCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +31,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED11AEB81DC081C700D5B675 /* FriendDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDetails.h; sourceTree = "<group>"; };
+		ED11AEB91DC081C700D5B675 /* FriendDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDetails.m; sourceTree = "<group>"; };
+		ED51F75E1DBF3C84002F8071 /* FriendsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsList.h; sourceTree = "<group>"; };
+		ED51F75F1DBF3C84002F8071 /* FriendsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsList.m; sourceTree = "<group>"; };
+		ED51F7611DBF3FCB002F8071 /* LoginClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginClass.h; sourceTree = "<group>"; };
+		ED51F7621DBF3FCB002F8071 /* LoginClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginClass.m; sourceTree = "<group>"; };
 		EDDB8C661DBE51BB0061D8FB /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDB8C6A1DBE51BB0061D8FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EDDB8C6C1DBE51BB0061D8FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -40,6 +50,8 @@
 		EDDB8C7F1DBE51BB0061D8FB /* ChatAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDB8C831DBE51BB0061D8FB /* ChatAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatAppTests.m; sourceTree = "<group>"; };
 		EDDB8C851DBE51BB0061D8FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDF81B7B1DBFA908006F0FBD /* FriendsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsCell.h; sourceTree = "<group>"; };
+		EDF81B7C1DBFA908006F0FBD /* FriendsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +102,14 @@
 				EDDB8C771DBE51BB0061D8FB /* LaunchScreen.storyboard */,
 				EDDB8C7A1DBE51BB0061D8FB /* Info.plist */,
 				EDDB8C691DBE51BB0061D8FB /* Supporting Files */,
+				ED51F75E1DBF3C84002F8071 /* FriendsList.h */,
+				ED51F75F1DBF3C84002F8071 /* FriendsList.m */,
+				ED51F7611DBF3FCB002F8071 /* LoginClass.h */,
+				ED51F7621DBF3FCB002F8071 /* LoginClass.m */,
+				EDF81B7B1DBFA908006F0FBD /* FriendsCell.h */,
+				EDF81B7C1DBFA908006F0FBD /* FriendsCell.m */,
+				ED11AEB81DC081C700D5B675 /* FriendDetails.h */,
+				ED11AEB91DC081C700D5B675 /* FriendDetails.m */,
 			);
 			path = ChatApp;
 			sourceTree = "<group>";
@@ -212,8 +232,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDDB8C711DBE51BB0061D8FB /* ViewController.m in Sources */,
+				EDF81B7D1DBFA908006F0FBD /* FriendsCell.m in Sources */,
 				EDDB8C6E1DBE51BB0061D8FB /* AppDelegate.m in Sources */,
 				EDDB8C6B1DBE51BB0061D8FB /* main.m in Sources */,
+				ED51F7601DBF3C84002F8071 /* FriendsList.m in Sources */,
+				ED11AEBA1DC081C700D5B675 /* FriendDetails.m in Sources */,
+				ED51F7631DBF3FCB002F8071 /* LoginClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +426,7 @@
 				EDDB8C8A1DBE51BB0061D8FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDDB8C8B1DBE51BB0061D8FB /* Build configuration list for PBXNativeTarget "ChatAppTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +435,7 @@
 				EDDB8C8D1DBE51BB0061D8FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
