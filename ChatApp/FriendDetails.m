@@ -64,7 +64,7 @@
 -(void)showStatusIndicator{
     
     NSString *status = self.statusString;
-    self.statusImage = [[UIImageView alloc] init];
+//    self.statusImage = [[UIImageView alloc] init];
     
     if ([status isEqualToString:@"Online"]) {
         self.statusImage.image = [UIImage imageNamed:@"Status-user-online"];

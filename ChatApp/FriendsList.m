@@ -58,9 +58,9 @@
     }
     
     NSURL *url = [NSURL URLWithString:item[@"imageURL"]];
-//    if (url.absoluteString.length == 0){
+
         cell.friendImage.image = [UIImage imageNamed:@"No_image.png"];
-//    }else{
+
     
     NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (data) {
@@ -75,7 +75,7 @@
             }
         }
     }];
-        [task resume];//}
+        [task resume];
     
 
     return cell;
