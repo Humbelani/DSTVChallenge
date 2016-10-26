@@ -11,14 +11,14 @@
 #import "FriendDetails.h"
 
 @interface FriendsList ()
-
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @end
 
 @implementation FriendsList
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.spinner startAnimating];
     [self showFriendsList];
     
     self.friendsTable.delegate = self;
@@ -52,7 +52,7 @@
     
     
     if ([item[@"status"] isEqualToString:@"Offline"]){
-        cell.lastSeen.text = [NSString stringWithFormat:@"Last seen: %@" ,item[@"lastSeen"]];
+        cell.lastSeen.text = [NSString stringWithFormat:@"Last seen: \n %@" ,item[@"lastSeen"]];
     }else{
         cell.lastSeen.text = [NSString stringWithFormat:@"Status: %@", item[@"status"]];
     }
@@ -82,18 +82,18 @@
 }
 
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NSDictionary *item = [self.friendsList objectAtIndex:indexPath.row];
-    self.passAlias = item[@"alias"];
-    self.passStatus = item[@"status"];
-    self.passLastSeenDate = item[@"lastSeen"];
-    self.firstName = item[@"firstName"];
-    self.passlastName = item[@"lastName"];
-    self.passDOB = item[@"dateOfBirth"];
-    
-    [self performSegueWithIdentifier:@"toDetailScreen" sender:self];
-}
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+////    NSDictionary *item = [self.friendsList objectAtIndex:indexPath.row];
+////    self.passAlias = item[@"alias"];
+////    self.passStatus = item[@"status"];
+////    self.passLastSeenDate = item[@"lastSeen"];
+////    self.firstName = item[@"firstName"];
+////    self.passlastName = item[@"lastName"];
+////    self.passDOB = item[@"dateOfBirth"];
+////    
+////    [self performSegueWithIdentifier:@"toDetailScreen" sender:self];
+//}
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
     
@@ -137,17 +137,11 @@
                                                                 NSDictionary* friendArray = (NSDictionary*)json[@"friends"];
                                                                 NSLog(@"Found %lu friends", (unsigned long)[friendArray count]);
                                                                 
-//                                                                for (NSDictionary* friend in friendArray){
-//                                                                    NSString* item = [[NSString alloc] init];
-//                                                                    item = [friend objectForKey:@"alias"];
-                                                                
-                                                                   // [self.friendsList addObject:friendArray];
                                                                     
                                                                     NSLog(@"Found %lu friendslist", (unsigned long)[self.friendsList count]);
-                                                                    
-                                                                //}
+                                                        
                                                             }
-                                                            
+                                                            [self.spinner stopAnimating];
                                                             self.friendsList = json[@"friends"];
                                                             [self.friendsTable reloadData];
                                                             

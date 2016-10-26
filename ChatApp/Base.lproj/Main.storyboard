@@ -138,41 +138,56 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="WHg-yr-vvp">
+                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="i8L-Yj-VUg" firstAttribute="bottom" secondItem="Re7-tR-uZe" secondAttribute="top" id="IfU-pa-08V"/>
+                            <constraint firstItem="WHg-yr-vvp" firstAttribute="leading" secondItem="8rG-Gp-EVE" secondAttribute="leadingMargin" constant="170" id="L2A-KY-xJm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="i8L-Yj-VUg" secondAttribute="trailing" constant="-20" id="dJw-z3-Ovw"/>
+                            <constraint firstItem="WHg-yr-vvp" firstAttribute="top" secondItem="QkQ-5J-kix" secondAttribute="bottom" constant="226" id="eND-Ip-Rsn"/>
                             <constraint firstItem="i8L-Yj-VUg" firstAttribute="leading" secondItem="8rG-Gp-EVE" secondAttribute="leadingMargin" constant="-20" id="ept-1t-jKw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WHg-yr-vvp" secondAttribute="trailing" constant="170" id="lHq-qp-ABt"/>
                             <constraint firstItem="i8L-Yj-VUg" firstAttribute="top" secondItem="QkQ-5J-kix" secondAttribute="bottom" id="pWM-Ia-owq"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="i8L-Yj-VUg"/>
+                                <exclude reference="WHg-yr-vvp"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="IfU-pa-08V"/>
                                 <exclude reference="dJw-z3-Ovw"/>
                                 <exclude reference="ept-1t-jKw"/>
                                 <exclude reference="pWM-Ia-owq"/>
+                                <exclude reference="L2A-KY-xJm"/>
+                                <exclude reference="eND-Ip-Rsn"/>
+                                <exclude reference="lHq-qp-ABt"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="i8L-Yj-VUg"/>
+                                <include reference="WHg-yr-vvp"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="IfU-pa-08V"/>
                                 <include reference="dJw-z3-Ovw"/>
                                 <include reference="ept-1t-jKw"/>
                                 <include reference="pWM-Ia-owq"/>
+                                <include reference="L2A-KY-xJm"/>
+                                <include reference="eND-Ip-Rsn"/>
+                                <include reference="lHq-qp-ABt"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Friends" id="boo-OT-9bk"/>
                     <connections>
                         <outlet property="friendsTable" destination="i8L-Yj-VUg" id="8wF-78-M02"/>
-                        <segue destination="F2x-DD-tP5" kind="show" identifier="toDetailScreen" id="mve-fa-DnT"/>
+                        <outlet property="spinner" destination="WHg-yr-vvp" id="FYW-QF-xfB"/>
+                        <segue destination="F2x-DD-tP5" kind="show" identifier="toDetailScreen" customClass="FriendSegue" id="mve-fa-DnT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5aG-bR-x3a" userLabel="First Responder" sceneMemberID="firstResponder"/>

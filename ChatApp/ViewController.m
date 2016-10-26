@@ -20,12 +20,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self showHideKeyboard];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)showHideKeyboard{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+}
+
+-(void)dismissKeyboard {
+    [self.username resignFirstResponder];
+    [self.password resignFirstResponder];
+    [self.view resignFirstResponder];
 }
 
 - (IBAction)LoginAction:(UIButton *)sender {
