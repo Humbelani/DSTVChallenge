@@ -10,7 +10,7 @@
         <!--Friends-->
         <scene sceneID="whv-kg-Zqx">
             <objects>
-                <viewController id="bED-nw-I04" customClass="FriendsList" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="bED-nw-I04" customClass="FriendsList" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QkQ-5J-kix"/>
                         <viewControllerLayoutGuide type="bottom" id="Re7-tR-uZe"/>
@@ -140,6 +140,7 @@
                             </tableView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="WHg-yr-vvp">
                                 <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -158,13 +159,13 @@
                                 <exclude reference="WHg-yr-vvp"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="L2A-KY-xJm"/>
+                                <exclude reference="eND-Ip-Rsn"/>
+                                <exclude reference="lHq-qp-ABt"/>
                                 <exclude reference="IfU-pa-08V"/>
                                 <exclude reference="dJw-z3-Ovw"/>
                                 <exclude reference="ept-1t-jKw"/>
                                 <exclude reference="pWM-Ia-owq"/>
-                                <exclude reference="L2A-KY-xJm"/>
-                                <exclude reference="eND-Ip-Rsn"/>
-                                <exclude reference="lHq-qp-ABt"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -173,13 +174,13 @@
                                 <include reference="WHg-yr-vvp"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="L2A-KY-xJm"/>
+                                <include reference="eND-Ip-Rsn"/>
+                                <include reference="lHq-qp-ABt"/>
                                 <include reference="IfU-pa-08V"/>
                                 <include reference="dJw-z3-Ovw"/>
                                 <include reference="ept-1t-jKw"/>
                                 <include reference="pWM-Ia-owq"/>
-                                <include reference="L2A-KY-xJm"/>
-                                <include reference="eND-Ip-Rsn"/>
-                                <include reference="lHq-qp-ABt"/>
                             </mask>
                         </variation>
                     </view>
@@ -197,7 +198,7 @@
         <!--Friend Details-->
         <scene sceneID="djl-gx-24o">
             <objects>
-                <viewController id="F2x-DD-tP5" customClass="FriendDetails" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="F2x-DD-tP5" customClass="FriendDetails" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2To-eD-CZM"/>
                         <viewControllerLayoutGuide type="bottom" id="WYC-k9-tIu"/>
@@ -310,8 +311,6 @@
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="FRU-7I-waj"/>
-                                        <exclude reference="7BP-OS-rlV"/>
-                                        <exclude reference="QtF-8g-mR7"/>
                                         <exclude reference="OIN-pT-eC8"/>
                                         <exclude reference="qPg-ws-sg0"/>
                                         <exclude reference="xbe-K5-rdv"/>
@@ -321,6 +320,8 @@
                                         <exclude reference="WfM-En-82b"/>
                                         <exclude reference="aNy-ar-VzV"/>
                                         <exclude reference="ztu-X3-QVy"/>
+                                        <exclude reference="7BP-OS-rlV"/>
+                                        <exclude reference="QtF-8g-mR7"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -332,8 +333,6 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="FRU-7I-waj"/>
-                                        <include reference="7BP-OS-rlV"/>
-                                        <include reference="QtF-8g-mR7"/>
                                         <include reference="OIN-pT-eC8"/>
                                         <include reference="qPg-ws-sg0"/>
                                         <include reference="xbe-K5-rdv"/>
@@ -343,6 +342,8 @@
                                         <include reference="WfM-En-82b"/>
                                         <include reference="aNy-ar-VzV"/>
                                         <include reference="ztu-X3-QVy"/>
+                                        <include reference="7BP-OS-rlV"/>
+                                        <include reference="QtF-8g-mR7"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -596,7 +597,7 @@
         <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -651,7 +652,9 @@
                                     <constraint firstAttribute="height" constant="30" id="38A-tF-imZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
-                                <state key="normal" title="LOGIN"/>
+                                <state key="normal" title="LOGIN">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="38A-tF-imZ"/>
@@ -666,11 +669,16 @@
                                     <action selector="LoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1za-a7-fxi"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="JUm-kQ-84u">
+                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="sj5-c4-tPs" secondAttribute="leading" id="2me-mI-gc6"/>
                             <constraint firstItem="f5L-3O-MzT" firstAttribute="top" secondItem="sj5-c4-tPs" secondAttribute="bottom" constant="141" id="7vL-ZI-pUN"/>
+                            <constraint firstItem="f5L-3O-MzT" firstAttribute="top" secondItem="JUm-kQ-84u" secondAttribute="bottom" constant="114" id="Bsd-zR-umv"/>
                             <constraint firstItem="bJr-lu-Erj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-1" id="JSe-Hy-HZU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sj5-c4-tPs" secondAttribute="trailing" id="MDi-CY-egG"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f5L-3O-MzT" secondAttribute="bottom" constant="106" id="NVU-jV-dS0"/>
@@ -679,6 +687,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="bJr-lu-Erj" secondAttribute="trailing" constant="1" id="WWQ-xH-Oyd"/>
                             <constraint firstItem="HZE-Oz-kuN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="dui-gg-1t5"/>
                             <constraint firstItem="sj5-c4-tPs" firstAttribute="top" secondItem="bJr-lu-Erj" secondAttribute="bottom" constant="13" id="eco-Zs-RGF"/>
+                            <constraint firstItem="JUm-kQ-84u" firstAttribute="centerX" secondItem="sj5-c4-tPs" secondAttribute="centerX" id="ulC-G0-cFd"/>
                             <constraint firstItem="f5L-3O-MzT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="uoK-Xh-oU9"/>
                             <constraint firstItem="bJr-lu-Erj" firstAttribute="top" secondItem="HZE-Oz-kuN" secondAttribute="bottom" constant="15" id="vwH-Hf-a8j"/>
                             <constraint firstItem="HZE-Oz-kuN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="21" id="wdk-IB-cye"/>
@@ -688,21 +697,24 @@
                                 <exclude reference="bJr-lu-Erj"/>
                                 <exclude reference="sj5-c4-tPs"/>
                                 <exclude reference="f5L-3O-MzT"/>
+                                <exclude reference="JUm-kQ-84u"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="NVU-jV-dS0"/>
+                                <exclude reference="S1L-dO-gHD"/>
+                                <exclude reference="dui-gg-1t5"/>
+                                <exclude reference="wdk-IB-cye"/>
                                 <exclude reference="JSe-Hy-HZU"/>
                                 <exclude reference="WWQ-xH-Oyd"/>
                                 <exclude reference="vwH-Hf-a8j"/>
                                 <exclude reference="2me-mI-gc6"/>
                                 <exclude reference="MDi-CY-egG"/>
                                 <exclude reference="eco-Zs-RGF"/>
+                                <exclude reference="ulC-G0-cFd"/>
                                 <exclude reference="7vL-ZI-pUN"/>
+                                <exclude reference="Bsd-zR-umv"/>
                                 <exclude reference="OyG-z4-yFG"/>
                                 <exclude reference="uoK-Xh-oU9"/>
-                                <exclude reference="S1L-dO-gHD"/>
-                                <exclude reference="dui-gg-1t5"/>
-                                <exclude reference="wdk-IB-cye"/>
+                                <exclude reference="NVU-jV-dS0"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -710,27 +722,32 @@
                                 <include reference="bJr-lu-Erj"/>
                                 <include reference="sj5-c4-tPs"/>
                                 <include reference="f5L-3O-MzT"/>
+                                <include reference="JUm-kQ-84u"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="NVU-jV-dS0"/>
+                                <include reference="S1L-dO-gHD"/>
+                                <include reference="dui-gg-1t5"/>
+                                <include reference="wdk-IB-cye"/>
                                 <include reference="JSe-Hy-HZU"/>
                                 <include reference="WWQ-xH-Oyd"/>
                                 <include reference="vwH-Hf-a8j"/>
                                 <include reference="2me-mI-gc6"/>
                                 <include reference="MDi-CY-egG"/>
                                 <include reference="eco-Zs-RGF"/>
+                                <include reference="ulC-G0-cFd"/>
                                 <include reference="7vL-ZI-pUN"/>
+                                <include reference="Bsd-zR-umv"/>
                                 <include reference="OyG-z4-yFG"/>
                                 <include reference="uoK-Xh-oU9"/>
-                                <include reference="S1L-dO-gHD"/>
-                                <include reference="dui-gg-1t5"/>
-                                <include reference="wdk-IB-cye"/>
+                                <include reference="NVU-jV-dS0"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="HjC-IO-Nwq"/>
                     <connections>
+                        <outlet property="loginButton" destination="f5L-3O-MzT" id="wyL-rS-kCA"/>
                         <outlet property="password" destination="sj5-c4-tPs" id="Pcz-PN-9hR"/>
+                        <outlet property="spinner" destination="JUm-kQ-84u" id="jdG-uu-lgo"/>
                         <outlet property="username" destination="bJr-lu-Erj" id="hnl-cI-ark"/>
                         <segue destination="bED-nw-I04" kind="show" identifier="toFriendsList" id="TrK-2U-OT0"/>
                     </connections>

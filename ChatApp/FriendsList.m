@@ -77,23 +77,25 @@
     }];
         [task resume];
     
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
 
     return cell;
 }
 
 
-//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
-////    NSDictionary *item = [self.friendsList objectAtIndex:indexPath.row];
-////    self.passAlias = item[@"alias"];
-////    self.passStatus = item[@"status"];
-////    self.passLastSeenDate = item[@"lastSeen"];
-////    self.firstName = item[@"firstName"];
-////    self.passlastName = item[@"lastName"];
-////    self.passDOB = item[@"dateOfBirth"];
-////    
-////    [self performSegueWithIdentifier:@"toDetailScreen" sender:self];
-//}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSDictionary *item = [self.friendsList objectAtIndex:indexPath.row];
+    self.passAlias = item[@"alias"];
+    self.passStatus = item[@"status"];
+    self.passLastSeenDate = item[@"lastSeen"];
+    self.firstName = item[@"firstName"];
+    self.passlastName = item[@"lastName"];
+    self.passDOB = item[@"dateOfBirth"];
+    
+    [self performSegueWithIdentifier:@"toDetailScreen" sender:self];
+}
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
     

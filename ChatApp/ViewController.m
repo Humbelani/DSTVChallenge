@@ -24,6 +24,14 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.spinner.hidden = YES;
+    [self.spinner stopAnimating];
+    self.loginButton.enabled = YES;
+    self.loginButton.titleLabel.textColor = [UIColor colorWithRed:0.0f/255.0f green:122.0f/255.0f blue:255.0f/255.0f alpha:1.0f];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -48,13 +56,19 @@
     if ([self.username.text isEqualToString:@""] || [self.password.text isEqualToString:@""]){
         [self alertStatus:@"Login Failed!" :@"Username/Password field cannot be blank" :0];
     }else{
-    [self login];
+        self.loginButton.enabled = NO;
+        [self login];
+        
     }
-
+    
 }
 
--(void)login{
 
+-(void)login{
+    
+    self.spinner.hidden = NO;
+    [self.spinner startAnimating];
+    
     NSDictionary *postDict = @{@"username":self.username.text,@"password":self.password.text};
     NSData *postData = [NSJSONSerialization dataWithJSONObject:postDict options:0 error:nil];
     NSString *postLength = [NSString stringWithFormat:@"%lu" , (unsigned long)[postData length]];
@@ -72,41 +86,57 @@
                                             completionHandler:
                                   ^(NSData *data, NSURLResponse *response, NSError *error) {
                                       
-                                      
-                                      NSString* body = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                                      
-                                      
-                                      if ([(NSHTTPURLResponse *)response statusCode] >= 200 && [(NSHTTPURLResponse *)response statusCode] < 300){
+                                      if(!error){
                                           
-                                          NSData *convertStringToData = [body dataUsingEncoding:NSUTF8StringEncoding];
+                                          NSString* body = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
                                           
-                                          id json = [NSJSONSerialization JSONObjectWithData:convertStringToData options:0 error:nil];
                                           
-                                          guid = json[@"guid"];
-                                          firstName = json[@"firstName"];
-                                          if ([json[@"result"] isEqual:@(1)]){
+                                          if ([(NSHTTPURLResponse *)response statusCode] >= 200 && [(NSHTTPURLResponse *)response statusCode] < 300){
                                               
-                                              dispatch_async(dispatch_get_main_queue(),  ^{
-                                                  [self performSegueWithIdentifier:@"toFriendsList" sender:self];
-                                            });
+                                              NSData *convertStringToData = [body dataUsingEncoding:NSUTF8StringEncoding];
                                               
-                                          
-                                             
-                                          }else{
+                                              id json = [NSJSONSerialization JSONObjectWithData:convertStringToData options:0 error:nil];
                                               
-                                              dispatch_async(dispatch_get_main_queue(), ^ {
-                                                  [self alertStatus:@"Login Failed!" :@"Username/Password is incorrect" :1];
-                                              });
-                                              
-                                             
-                                          }
+                                              guid = json[@"guid"];
+                                              firstName = json[@"firstName"];
+                                              if ([json[@"result"] isEqual:@(1)]){
+                                                  [self.spinner  stopAnimating];
+                                                  self.spinner.hidden = YES;
+                                                  dispatch_async(dispatch_get_main_queue(),  ^{
+                                                      [self performSegueWithIdentifier:@"toFriendsList" sender:self];
+                                                      [self.spinner  stopAnimating];
+                                                      self.spinner.hidden = YES;
+                                                  });
+                                                  
+                                              }else{
+                                                  
+                                                  dispatch_async(dispatch_get_main_queue(), ^ {
+                                                      [self alertStatus:@"Login Failed!" :@"Username/Password is incorrect" :1];
+                                                      [self.spinner stopAnimating];
+                                                      self.spinner.hidden = YES;
 
-                                      }else{
-                                          [self alertStatus:@"OOpse" :@"server is down" :2];
+                                                  });
+                                                 }
+                                              
+                                          }else{
+                                              [self alertStatus:@"OOpse" :@"server is down" :2];
+                                          }
+                                          
+                                          NSLog(@"Response Body:\n%@\n", body);
+                                          [self.spinner stopAnimating];
+                                          self.loginButton.enabled = YES;
+                                          self.spinner.hidden = YES;
                                       }
-                                      
-                                      NSLog(@"Response Body:\n%@\n", body);
-                                      
+                                      else{
+                                          dispatch_async(dispatch_get_main_queue(), ^ {
+                                              [self alertStatus:@"Error!" :error.localizedDescription :3];
+                                              [self.spinner stopAnimating];
+                                              self.spinner.hidden = YES;
+                                              self.loginButton.enabled = YES;
+                                          });
+                                        }
+                   
+                                      self.spinner.hidden = YES;
                                       
                                   }];
     [task resume];
@@ -114,7 +144,7 @@
 
 - (void) alertStatus:(NSString *)title :(NSString *)message :(int) tag
 {
-
+    
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
                                                                              message:message
@@ -136,12 +166,14 @@
     if ([[segue identifier] isEqualToString:@"toFriendsList"]) {
         
         
-          FriendsList *friendsList = [segue destinationViewController];
-          friendsList.guid = guid;
-          friendsList.firstName = firstName;
+        FriendsList *friendsList = [segue destinationViewController];
+        friendsList.guid = guid;
+        friendsList.firstName = firstName;
         
         
         [segue.destinationViewController setTitle:@"Friends"];
+        [self.spinner stopAnimating];
+        self.spinner.hidden = YES;
     }}
 
 
